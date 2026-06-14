@@ -255,13 +255,12 @@
             <div class="form__row">
               <label class="field">
                 <span class="field__label">Марка автомобиля</span>
-                <select name="brand" class="field__input" id="brandSelect">
-                  <option value="">Выберите марку</option>
-                </select>
+                <input type="text" name="brand" class="field__input" id="brandInput" list="brandList" placeholder="Выберите или введите марку" autocomplete="off" />
+                <datalist id="brandList"></datalist>
               </label>
               <label class="field">
                 <span class="field__label">Модель автомобиля</span>
-                <input type="text" name="model" class="field__input" id="modelInput" list="modelList" placeholder="Выберите или введите модель" />
+                <input type="text" name="model" class="field__input" id="modelInput" list="modelList" placeholder="Выберите или введите модель" autocomplete="off" />
                 <datalist id="modelList"></datalist>
               </label>
             </div>

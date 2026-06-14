@@ -67,34 +67,37 @@ const CARS = {
   "ГАЗ": ["Газель", "Соболь", "Волга"],
 };
 
-const brandSelect = document.getElementById("brandSelect");
+const brandInput = document.getElementById("brandInput");
+const brandList = document.getElementById("brandList");
 const modelInput = document.getElementById("modelInput");
 const modelList = document.getElementById("modelList");
 
-/* Заполняем список марок (по алфавиту) */
+/* Заполняем подсказки марок (по алфавиту). Поле — текстовое: можно
+   выбрать из списка или ввести свою марку вручную. */
 Object.keys(CARS)
   .sort((a, b) => a.localeCompare(b, "ru"))
   .forEach((brand) => {
     const opt = document.createElement("option");
     opt.value = brand;
-    opt.textContent = brand;
-    brandSelect.appendChild(opt);
+    brandList.appendChild(opt);
   });
 
-/* Обновляем варианты моделей. Поле остаётся текстовым — можно ввести своё. */
-brandSelect.addEventListener("change", () => {
+/* Подставляем модели выбранной марки в подсказки. Если марки нет в
+   списке — поле модели всё равно остаётся для ручного ввода. */
+function syncModels() {
+  const models = CARS[brandInput.value.trim()] || [];
   modelList.innerHTML = "";
-  const models = CARS[brandSelect.value] || [];
   models.forEach((m) => {
     const opt = document.createElement("option");
     opt.value = m;
     modelList.appendChild(opt);
   });
-  modelInput.value = "";
   modelInput.placeholder = models.length
     ? "Выберите или введите модель"
     : "Введите модель вручную";
-});
+}
+brandInput.addEventListener("input", syncModels);
+brandInput.addEventListener("change", syncModels);
 
 /* ---------- Быстрая запись из карточек услуг ---------- */
 const serviceSelect = document.getElementById("serviceSelect");
