@@ -68,36 +68,90 @@ const CARS = {
 };
 
 const brandInput = document.getElementById("brandInput");
-const brandList = document.getElementById("brandList");
 const modelInput = document.getElementById("modelInput");
-const modelList = document.getElementById("modelList");
 
-/* Заполняем подсказки марок (по алфавиту). Поле — текстовое: можно
-   выбрать из списка или ввести свою марку вручную. */
-Object.keys(CARS)
-  .sort((a, b) => a.localeCompare(b, "ru"))
-  .forEach((brand) => {
-    const opt = document.createElement("option");
-    opt.value = brand;
-    brandList.appendChild(opt);
+const BRANDS = Object.keys(CARS).sort((a, b) => a.localeCompare(b, "ru"));
+
+/* ----------------------------------------------------------------
+   Combobox: выпадающий список + свободный ввод.
+   - клик по полю или стрелке открывает полный список;
+   - ввод текста фильтрует подсказки;
+   - можно выбрать вариант мышью ИЛИ вписать своё значение вручную.
+   ---------------------------------------------------------------- */
+function makeCombo(comboId, getOptions, onSelect) {
+  const combo = document.getElementById(comboId);
+  const input = combo.querySelector(".combo__input");
+  const arrow = combo.querySelector(".combo__arrow");
+  const menu = combo.querySelector(".combo__menu");
+
+  function render(filter) {
+    const all = getOptions();
+    const f = (filter || "").trim().toLowerCase();
+    const list = f ? all.filter((o) => o.toLowerCase().includes(f)) : all;
+
+    menu.innerHTML = "";
+    if (!list.length) {
+      const li = document.createElement("li");
+      li.className = "combo__empty";
+      li.textContent = all.length ? "Ничего не найдено — введите вручную" : "Введите вручную";
+      menu.appendChild(li);
+      return;
+    }
+    list.forEach((value) => {
+      const li = document.createElement("li");
+      li.className = "combo__option";
+      li.setAttribute("role", "option");
+      li.textContent = value;
+      // mousedown, чтобы выбор сработал раньше потери фокуса
+      li.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        input.value = value;
+        close();
+        if (onSelect) onSelect();
+      });
+      menu.appendChild(li);
+    });
+  }
+
+  function open(filter) {
+    render(filter);
+    menu.hidden = false;
+    combo.classList.add("is-open");
+    input.setAttribute("aria-expanded", "true");
+  }
+  function close() {
+    menu.hidden = true;
+    combo.classList.remove("is-open");
+    input.setAttribute("aria-expanded", "false");
+  }
+
+  input.addEventListener("focus", () => open(""));
+  input.addEventListener("input", () => {
+    open(input.value);
+    if (onSelect) onSelect();
+  });
+  arrow.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    if (menu.hidden) {
+      input.focus();
+      open("");
+    } else {
+      close();
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!combo.contains(e.target)) close();
   });
 
-/* Подставляем модели выбранной марки в подсказки. Если марки нет в
-   списке — поле модели всё равно остаётся для ручного ввода. */
-function syncModels() {
-  const models = CARS[brandInput.value.trim()] || [];
-  modelList.innerHTML = "";
-  models.forEach((m) => {
-    const opt = document.createElement("option");
-    opt.value = m;
-    modelList.appendChild(opt);
-  });
-  modelInput.placeholder = models.length
-    ? "Выберите или введите модель"
-    : "Введите модель вручную";
+  return { close };
 }
-brandInput.addEventListener("input", syncModels);
-brandInput.addEventListener("change", syncModels);
+
+makeCombo("brandCombo", () => BRANDS, () => {
+  // при смене марки подсказываем подходящий placeholder для модели
+  const has = (CARS[brandInput.value.trim()] || []).length;
+  modelInput.placeholder = has ? "Выберите или введите модель" : "Введите модель вручную";
+});
+makeCombo("modelCombo", () => CARS[brandInput.value.trim()] || []);
 
 /* ---------- Быстрая запись из карточек услуг ---------- */
 const serviceSelect = document.getElementById("serviceSelect");
@@ -117,9 +171,23 @@ document.querySelectorAll(".service-card__link").forEach((link) => {
    которая пересылает её в Telegram. Токен бота и chat_id хранятся
    в переменных окружения на стороне сервера — в коде сайта их нет.
    ============================================================ */
+/* Демо-режим: форма показывает заглушку «Заявка отправлена мастеру»
+   без реальной отправки в Telegram. Когда настроите бота
+   (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID), поставьте STUB_MODE = false —
+   и заявки начнут уходить в Telegram через /api/lead. */
+const STUB_MODE = true;
+
 const form = document.getElementById("leadForm");
 const submitBtn = document.getElementById("submitBtn");
 const successBox = document.getElementById("formSuccess");
+
+function showSuccess() {
+  form.querySelectorAll(".field, .form__row, .form__hint, #submitBtn").forEach(
+    (el) => (el.style.display = "none")
+  );
+  successBox.hidden = false;
+  successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+}
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -144,6 +212,12 @@ form.addEventListener("submit", async (e) => {
     comment: form.elements.comment.value.trim(),
   };
 
+  /* Заглушка: сразу показываем подтверждение, ничего не отправляя */
+  if (STUB_MODE) {
+    showSuccess();
+    return;
+  }
+
   submitBtn.disabled = true;
   const original = submitBtn.textContent;
   submitBtn.textContent = "Отправляем…";
@@ -155,13 +229,7 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify(data),
     });
     if (!res.ok) throw new Error("Bad response");
-
-    /* Успех: показываем сообщение */
-    form.querySelectorAll(".field, .form__row, .form__hint, #submitBtn").forEach(
-      (el) => (el.style.display = "none")
-    );
-    successBox.hidden = false;
-    successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    showSuccess();
   } catch (err) {
     submitBtn.disabled = false;
     submitBtn.textContent = original;

@@ -253,16 +253,26 @@
             </label>
 
             <div class="form__row">
-              <label class="field">
+              <div class="field">
                 <span class="field__label">Марка автомобиля</span>
-                <input type="text" name="brand" class="field__input" id="brandInput" list="brandList" placeholder="Выберите или введите марку" autocomplete="off" />
-                <datalist id="brandList"></datalist>
-              </label>
-              <label class="field">
+                <div class="combo" id="brandCombo">
+                  <input type="text" name="brand" class="field__input combo__input" id="brandInput" placeholder="Выберите или введите марку" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" />
+                  <button type="button" class="combo__arrow" tabindex="-1" aria-label="Показать список марок">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <ul class="combo__menu" role="listbox" hidden></ul>
+                </div>
+              </div>
+              <div class="field">
                 <span class="field__label">Модель автомобиля</span>
-                <input type="text" name="model" class="field__input" id="modelInput" list="modelList" placeholder="Выберите или введите модель" autocomplete="off" />
-                <datalist id="modelList"></datalist>
-              </label>
+                <div class="combo" id="modelCombo">
+                  <input type="text" name="model" class="field__input combo__input" id="modelInput" placeholder="Выберите или введите модель" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" />
+                  <button type="button" class="combo__arrow" tabindex="-1" aria-label="Показать список моделей">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <ul class="combo__menu" role="listbox" hidden></ul>
+                </div>
+              </div>
             </div>
 
             <label class="field">
@@ -289,7 +299,8 @@
 
             <div class="form__success" id="formSuccess" hidden>
               <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+              <p>Заявка отправлена мастеру</p>
+              <span>Спасибо! Мы свяжемся с вами в ближайшее время.</span>
             </div>
           </form>
         </div>
