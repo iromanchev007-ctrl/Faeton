@@ -1,0 +1,13 @@
+# Конфигурация Netlify.
+# Сайт — статика в корне репозитория, функции — в netlify/functions.
+# Запрос /api/lead перенаправляется на функцию, чтобы фронтенд
+# работал одинаково и на Vercel, и на Netlify.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/lead"
+  to = "/.netlify/functions/lead"
+  status = 200

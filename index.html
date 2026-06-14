@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Фаэтон — онлайн-запись в автосервис в Саратове без звонков</title>
+  <meta name="description" content="Автосервис «Фаэтон» в Саратове: компьютерная диагностика, замена масел, развал-схождение на 3D-стенде, сварочные работы. Оставьте заявку онлайн — менеджер свяжется в течение 15 минут." />
+  <meta name="keywords" content="автосервис Саратов, диагностика авто, развал схождение, замена масла, ремонт авто, Фаэтон" />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="canonical" href="https://faeton.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Фаэтон — онлайн-запись в автосервис без звонков" />
+  <meta property="og:description" content="Укажите марку, модель и симптомы — заявка сразу придёт менеджеру. Свяжемся в течение 15 минут." />
+  <meta property="og:locale" content="ru_RU" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- SEO: структурированные данные об организации -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Фаэтон",
+    "image": "https://faeton.example/og.jpg",
+    "description": "Автосервис в Саратове: диагностика, ТО, развал-схождение, сварочные работы.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Дегтярная площадь, 3Г",
+      "addressLocality": "Саратов",
+      "addressCountry": "RU"
+    },
+    "telephone": ["+79379685411", "+78452728709"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "priceRange": "от 200 ₽"
+  }
+  </script>
+</head>
+<body>
+  <!-- ======================= ШАПКА ======================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" aria-label="Фаэтон — на главную">
+        VR<span>S</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about" class="nav__link">О нас</a>
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#address" class="nav__link">Адрес</a>
+        <a href="#lead" class="btn btn--primary btn--sm nav__cta">Записаться</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="badge">
+            <span class="badge__dot"></span> Онлайн-запись за 2 минуты
+          </span>
+
+          <h1 class="hero__title">
+            Запишитесь<br />
+            в сервис <span class="accent">без звонков</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            Укажите марку, модель и симптомы — заявка сразу придёт менеджеру.
+            Свяжемся в течение 15 минут.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#lead" class="btn btn--primary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Оставить заявку
+            </a>
+            <a href="tel:+79379685411" class="btn btn--ghost">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Позвонить
+            </a>
+          </div>
+
+          <dl class="stats">
+            <div class="stats__item">
+              <dt class="stats__num">5+</dt>
+              <dd class="stats__label">лет работы</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__num">1000+</dt>
+              <dd class="stats__label">клиентов</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__num">15 мин</dt>
+              <dd class="stats__label">время ответа</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= О КОМПАНИИ ======================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">О компании</span>
+          <h2 class="section__title">Автосервис «Фаэтон» в Саратове</h2>
+          <p class="section__lead">
+            Мы обслуживаем легковые автомобили — от отечественных моделей до иномарок.
+            Современное оборудование, честные цены и понятный результат: вы всегда
+            знаете, что и зачем мы делаем с вашей машиной.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Современное оборудование</h3>
+            <p>3D-стенд развал-схождения, профессиональные сканеры и сварочный полуавтомат.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Честные цены</h3>
+            <p>Фиксированный прайс без навязанных услуг. Согласовываем стоимость до начала работ.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Ответ за 15 минут</h3>
+            <p>Заявка с сайта моментально приходит менеджеру — перезваниваем в течение 15 минут.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Гарантия на работы</h3>
+            <p>Отвечаем за качество ремонта и используем проверенные расходные материалы.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= УСЛУГИ И ЦЕНЫ ======================= -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Услуги и цены</span>
+          <h2 class="section__title">Что мы делаем</h2>
+          <p class="section__lead">Цены указаны «от». Точную стоимость подтвердит менеджер после диагностики.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-card__title">Компьютерная диагностика</h3>
+            <p class="service-card__desc">Диагностика электрооборудования ВАЗ и иномарок, считывание и расшифровка ошибок.</p>
+            <div class="service-card__price">от 1000 ₽</div>
+            <a href="#lead" class="service-card__link" data-service="Компьютерная диагностика">Записаться →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h13a3 3 0 0 0 3-3V7"/><path d="M3 10v8"/><path d="M16 7h4l1 3"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Замена масел и обслуживание ДВС</h3>
+            <p class="service-card__desc">Замена масла ДВС, АКПП и редуктора с подбором подходящих расходников.</p>
+            <div class="service-card__price">от 500 ₽</div>
+            <a href="#lead" class="service-card__link" data-service="Замена масел и обслуживание ДВС">Записаться →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="3" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="21" y2="12"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </div>
+            <h3 class="service-card__title">Развал-схождение</h3>
+            <p class="service-card__desc">Регулировка углов установки колёс на современном 3D-стенде.</p>
+            <div class="service-card__price">от 1000 ₽</div>
+            <a href="#lead" class="service-card__link" data-service="Развал-схождение">Записаться →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-9 9 1 4 4 1 9-9"/><path d="M14 4l4 4"/><path d="M3 21l3-1"/></svg>
+            </div>
+            <h3 class="service-card__title">Сварочные работы / Выхлопная система</h3>
+            <p class="service-card__desc">Сварка полуавтоматом, замена гофры, ремонт и сварка глушителя.</p>
+            <div class="service-card__price">от 200 ₽</div>
+            <a href="#lead" class="service-card__link" data-service="Сварочные работы / Выхлопная система">Записаться →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= ЗАЯВКА ======================= -->
+    <section class="section" id="lead">
+      <div class="container">
+        <div class="lead">
+          <div class="lead__info reveal">
+            <span class="eyebrow">Онлайн-запись</span>
+            <h2 class="section__title">Оставить заявку</h2>
+            <p class="section__lead">
+              Заполните форму — заявка моментально придёт менеджеру в Telegram.
+              Мы перезвоним и подберём удобное время.
+            </p>
+            <ul class="lead__list">
+              <li>Ответ в течение 15 минут</li>
+              <li>Без навязанных услуг</li>
+              <li>Согласуем цену до начала работ</li>
+            </ul>
+          </div>
+
+          <form class="form reveal" id="leadForm" novalidate>
+            <div class="form__row">
+              <label class="field">
+                <span class="field__label">Имя <i>*</i></span>
+                <input type="text" name="name" class="field__input" placeholder="Как к вам обращаться" required />
+              </label>
+              <label class="field">
+                <span class="field__label">Телефон <i>*</i></span>
+                <input type="tel" name="phone" class="field__input" placeholder="+7 (___) ___-__-__" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="field__label">Email</span>
+              <input type="email" name="email" class="field__input" placeholder="you@example.com" />
+            </label>
+
+            <div class="form__row">
+              <label class="field">
+                <span class="field__label">Марка автомобиля</span>
+                <select name="brand" class="field__input" id="brandSelect">
+                  <option value="">Выберите марку</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Модель автомобиля</span>
+                <input type="text" name="model" class="field__input" id="modelInput" list="modelList" placeholder="Выберите или введите модель" />
+                <datalist id="modelList"></datalist>
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="field__label">Услуга</span>
+              <select name="service" class="field__input" id="serviceSelect">
+                <option value="">Выберите услугу</option>
+                <option>Компьютерная диагностика</option>
+                <option>Замена масел и обслуживание ДВС</option>
+                <option>Развал-схождение</option>
+                <option>Сварочные работы / Выхлопная система</option>
+                <option>Другое / не знаю</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Комментарий / симптомы</span>
+              <textarea name="comment" class="field__input field__input--area" rows="3" placeholder="Опишите проблему: например, «горит Check Engine, плавают обороты»"></textarea>
+            </label>
+
+            <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+              Отправить заявку
+            </button>
+            <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+
+            <div class="form__success" id="formSuccess" hidden>
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= АДРЕС ======================= -->
+    <section class="section section--alt" id="address">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Как нас найти</span>
+          <h2 class="section__title">Адрес и время работы</h2>
+        </div>
+
+        <div class="address">
+          <div class="address__info reveal">
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <span class="info-row__label">Адрес</span>
+                <p>Дегтярная площадь, 3Г, Саратов</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <span class="info-row__label">Время работы</span>
+                <p>Будни 9:00 – 18:00<br />Суббота и воскресенье — выходной</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <span class="info-row__label">Телефоны</span>
+                <p>
+                  <a href="tel:+79379685411">+7 (937) 968-54-11</a><br />
+                  <a href="tel:+78452728709">+7 (8452) 72-87-09</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="address__map reveal">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=45.989838%2C51.512808&z=16&text=%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%2C%20%D0%94%D0%B5%D0%B3%D1%82%D1%8F%D1%80%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%2C%203%D0%93"
+              width="100%" height="100%" frameborder="0" allowfullscreen="true"
+              title="Карта проезда к автосервису Фаэтон" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= СВЯЗЬ ======================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-band reveal">
+          <div>
+            <h2 class="section__title section__title--sm">Остались вопросы?</h2>
+            <p class="section__lead">Позвоните или напишите — ответим и поможем с выбором услуги.</p>
+          </div>
+          <div class="contact-band__links">
+            <a href="tel:+79379685411" class="btn btn--primary">+7 (937) 968-54-11</a>
+            <a href="tel:+78452728709" class="btn btn--ghost">+7 (8452) 72-87-09</a>
+            <a href="mailto:XXX@example.com" class="btn btn--ghost">XXX@example.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= ПОДВАЛ ======================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <a href="#hero" class="logo logo--footer">VR<span>S</span></a>
+        <p class="footer__about">Автосервис «Фаэтон» — диагностика, обслуживание и ремонт легковых автомобилей в Саратове.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+79379685411">+7 (937) 968-54-11</a>
+        <a href="tel:+78452728709">+7 (8452) 72-87-09</a>
+        <a href="mailto:XXX@example.com">XXX@example.com</a>
+      </div>
+      <div class="footer__col">
+        <h4>Адрес</h4>
+        <p>Дегтярная площадь, 3Г, Саратов</p>
+        <p>Будни 9:00 – 18:00<br />Сб, Вс — выходной</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Автосервис «Фаэтон». Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
